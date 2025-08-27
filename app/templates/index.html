@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure File Share</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Secure File Sharing Portal</h1>
+            <p>Upload your files here. They will be encrypted and stored safely.</p>
+        </header>
+
+        <section class="upload-section">
+            <h2>Upload a New File</h2>
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" required>
+                <button type="submit">Upload & Encrypt</button>
+            </form>
+        </section>
+
+        <section class="files-section">
+            <h2>Available Files</h2>
+            {% if files %}
+                <ul>
+                    {% for file in files %}
+                        <li>
+                            <span>{{ file.replace('.enc', '') }}</span>
+                            <a href="{{ url_for('download_page', filename=file) }}" class="button">Download</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No files have been uploaded yet.</p>
+            {% endif %}
+        </section>
+    </div>
+</body>
+</html>

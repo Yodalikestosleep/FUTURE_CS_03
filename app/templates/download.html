@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Download</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Confirm Your Download</h1>
+        </header>
+
+        <section class="download-confirm">
+            <p>You are about to download the file: <strong>{{ filename }}</strong></p>
+            <p>The file will be decrypted before being sent to you.</p>
+            <a href="{{ url_for('download_file', filename=filename) }}" class="button">Confirm & Download</a>
+            <a href="{{ url_for('index') }}" class="button-secondary">Cancel</a>
+        </section>
+    </div>
+</body>
+</html>
