@@ -1,16 +1,29 @@
-How to run?
+# Secure File Sharing App
 
-1. Install Requirements:
-    pip install -r requirements.txt
+A simple Flask web application for uploading, encrypting, and securely downloading files.
 
-2. Create a virtual environment:
-    For Linux or mac:
-        python3 -m venv venv
-        source venv/bin/activate
-    For Windows:
-        python -m venv venv
-        .\venv\Scripts\activate
-3. Run the file:
-    python app/app.py
+## How to Run
 
-// The project will run on default port 5000 on localhost.
+1. Install Requirements  
+```bash
+pip install -r requirements.txt
+```
+
+2. Create a Virtual Environment  
+- Linux / macOS  
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+- Windows  
+```bash
+python -m venv venv
+.env\Scriptsctivate
+```
+
+3. Run the Application  
+```bash
+python app/app.py
+```
+
+The project will run on **http://localhost:5000** by default.
